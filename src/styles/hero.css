@@ -1,0 +1,292 @@
+/* ==========================================================================
+   MADHURA MULTICUISINE RESTAURANT — SECTION 01: CINEMATIC HERO
+   Editorial Left Text / Right Steaming 360° Biryani Video (Parchment Foundation)
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--paper);
+  padding-top: calc(var(--header-height, 92px) + clamp(15px, 2vh, 32px));
+  padding-bottom: clamp(30px, 3.5vh, 48px);
+  overflow: hidden;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: minmax(420px, 0.9fr) minmax(550px, 1.1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: clamp(2rem, 3.5vw, 4rem);
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Classical Editorial Quotation & Strict Left Alignment
+   -------------------------------------------------------------------------- */
+.hero-text-col {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 2;
+}
+
+.hero-scroll-wrap {
+  grid-column: 1;
+  grid-row: 2;
+  z-index: 2;
+  margin-top: calc(-1 * var(--space-sm));
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Stagger Entrance */
+.hero-stagger {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 950ms var(--ease-editorial),
+              transform 950ms var(--ease-editorial);
+}
+
+.hero-section.hero-revealed .hero-stagger {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-section.hero-revealed .hero-eyebrow {
+  transition-delay: 150ms;
+}
+
+.hero-section.hero-revealed .hero-quote-heading {
+  transition-delay: 350ms;
+}
+
+.hero-section.hero-revealed .hero-ornament-rule {
+  transition-delay: 550ms;
+}
+
+.hero-section.hero-revealed .hero-supporting-p {
+  transition-delay: 750ms;
+}
+
+.hero-section.hero-revealed .hero-scroll-wrap {
+  transition-delay: 950ms;
+}
+
+/* Small Eyebrow */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--dark-brown);
+  margin-bottom: var(--space-md);
+}
+
+.hero-eyebrow-dash {
+  width: 20px;
+  height: 1px;
+  background-color: var(--gold);
+}
+
+/* Main Quotation: “WHERE EVERY MEAL BECOMES A MEMORY.” */
+.hero-quote-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-hero-quote);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--dark-brown);
+  margin-bottom: var(--space-md);
+}
+
+.hero-quote-heading em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--brown);
+}
+
+/* Classical Ornament: ──────── ❧ ──────── (SVG Vector Implementation) */
+.hero-ornament-rule {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  color: var(--dark-brown);
+}
+
+.hero-ornament-line {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--dark-brown), transparent);
+}
+
+.hero-ornament-svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Small Supporting Line */
+.hero-supporting-p {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.35vw, 1.35rem);
+  font-style: italic;
+  line-height: var(--leading-relaxed);
+  color: var(--brown);
+  max-width: 480px;
+  margin-bottom: var(--space-xl);
+}
+
+/* Restrained Scroll Indicator */
+.hero-scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--dark-brown);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color var(--duration-fast) var(--ease-editorial),
+              transform var(--duration-fast) var(--ease-editorial);
+}
+
+.hero-scroll-cue:hover {
+  color: var(--gold);
+  transform: translateY(2px);
+}
+
+.hero-scroll-dash {
+  width: 34px;
+  height: 1px;
+  background-color: var(--gold);
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Steaming 360° Ulavacharu Kodi Pulav Video
+   Floating directly against the parchment background (no card, no border)
+   -------------------------------------------------------------------------- */
+.hero-food-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 780px;
+  z-index: 1;
+}
+
+.hero-pulav-video-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Feathering mask ensures seamless dissolve into warm parchment */
+  mask-image: radial-gradient(ellipse at 50% 50%, black 72%, transparent 98%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 72%, transparent 98%);
+}
+
+.hero-pulav-video {
+  width: 100%;
+  max-width: 780px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  display: block;
+}
+
+.hero-food-caption {
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--dark-brown);
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Architecture
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+
+  .hero-text-col {
+    order: 1;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .hero-food-col {
+    order: 2;
+    margin: 0 auto;
+    max-width: 620px;
+    width: 100%;
+  }
+
+  .hero-scroll-wrap {
+    order: 3;
+    margin-top: var(--space-sm);
+  }
+
+  .hero-supporting-p {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-ornament-line {
+    width: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: calc(var(--header-height-mobile, 72px) + 20px);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .hero-quote-heading {
+    font-size: clamp(1.85rem, 6.5vw, 2.5rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero-pulav-video-wrap {
+    mask-image: radial-gradient(ellipse at 50% 50%, black 75%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 75%, transparent 100%);
+  }
+
+  .hero-pulav-video {
+    max-width: 100%;
+  }
+}

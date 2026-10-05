@@ -1,0 +1,99 @@
+/* ==========================================================================
+   MADHURA MULTICUISINE RESTAURANT — DESIGN SYSTEM TOKENS
+   Classic Heritage Theme (Inspired by Physical Madhura Menu)
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. GLOBAL VISUAL IDENTITY PALETTE (Exact Specification)
+     ------------------------------------------------------------------------ */
+  --paper: #E8D3AE;             /* Main Parchment Background */
+  --paper-light: #F5E8CC;       /* Light Parchment Fills & Cards */
+  --brown: #402018;             /* Primary Text & Classical Rules */
+  --dark-brown: #28130F;        /* Header Navigation, Key Titles & Accents */
+  --gold: #B58A45;              /* Secondary Antique Gold Accents & Active Underlines */
+  --rose: #A94F55;              /* Muted Rose — Restrained Micro Details */
+  --ivory: #FFF8EA;             /* Soft Ivory — Highlight Contrast & Overlays */
+
+  /* Legacy & Semantic Aliases */
+  --madhura-paper: var(--paper);
+  --madhura-cream: var(--paper-light);
+  --madhura-brown: var(--brown);
+  --madhura-dark: var(--dark-brown);
+  --madhura-gold: var(--gold);
+  --madhura-rose: var(--rose);
+  --madhura-ivory: var(--ivory);
+
+  /* Tonal Borders */
+  --border-subtle: rgba(64, 32, 24, 0.22);
+  --border-gold: rgba(181, 138, 69, 0.45);
+  --border-dark: rgba(40, 19, 15, 0.35);
+
+  /* ------------------------------------------------------------------------
+     Typography System (Cormorant Garamond + Inter / Plus Jakarta Sans)
+     ------------------------------------------------------------------------ */
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+  /* Font Scales */
+  --text-xs: 0.75rem;       /* 12px */
+  --text-sm: 0.875rem;      /* 14px */
+  --text-base: 1rem;        /* 16px */
+  --text-md: 1.125rem;      /* 18px */
+  --text-lg: 1.25rem;       /* 20px */
+  --text-xl: 1.5rem;        /* 24px */
+  --text-2xl: 1.875rem;     /* 30px */
+  --text-3xl: 2.25rem;      /* 36px */
+  --text-4xl: 3rem;         /* 48px */
+  --text-hero-quote: clamp(42px, 4.2vw, 76px);
+  --text-section-title: clamp(1.85rem, 3.5vw, 3.25rem);
+
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.7;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.14em;
+  --tracking-eyebrow: 0.22em;
+  --tracking-nav: 0.16em;
+
+  /* ------------------------------------------------------------------------
+     Architectural Spacing System (Wide Content Area, Controlled Margins)
+     ------------------------------------------------------------------------ */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.75rem;
+  --space-3xl: 3.75rem;
+  --space-4xl: 5rem;
+
+  /* Global Wide Container Dimensions (90–94% of laptop width) */
+  --container-max: 1600px;
+  --container-width: min(94vw, 1560px);
+  --container-padding: clamp(20px, 3vw, 56px);
+
+  --header-height: 92px;
+  --header-height-mobile: 72px;
+
+  /* ------------------------------------------------------------------------
+     Motion & Transitions (Restrained Classical Easing)
+     ------------------------------------------------------------------------ */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 220ms;
+  --duration-normal: 380ms;
+  --duration-medium: 650ms;
+
+  /* Shadows */
+  --shadow-photo: 0 10px 28px -6px rgba(40, 19, 15, 0.2), 0 3px 8px rgba(40, 19, 15, 0.08);
+  --shadow-hover: 0 16px 36px -8px rgba(40, 19, 15, 0.28), 0 4px 12px rgba(40, 19, 15, 0.12);
+  --shadow-header: 0 6px 20px -4px rgba(24, 11, 9, 0.4);
+}

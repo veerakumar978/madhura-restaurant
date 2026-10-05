@@ -1,0 +1,152 @@
+/* ==========================================================================
+   MADHURA MULTICUISINE RESTAURANT — WELCOME CINEMATIC OPENING STYLES
+   Permanent Opening Visual with Sticky Scroll Transition into Website
+   ========================================================================== */
+
+.welcome-track-section {
+  position: relative;
+  width: 100%;
+  height: 175vh; /* Natural 600–900px scroll distance before Hero */
+  min-height: 850px;
+  background-color: #000000;
+  z-index: 50;
+  overflow: clip;
+}
+
+.welcome-sticky-stage {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  transition: transform 60ms linear, opacity 60ms linear;
+}
+
+.welcome-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Subtle Vignette */
+.welcome-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 60%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+/* --------------------------------------------------------------------------
+   Subtle Antique Gold / Ivory Scroll Indicator
+   Appears when video playback completes / ready
+   -------------------------------------------------------------------------- */
+.welcome-scroll-cue {
+  position: absolute;
+  bottom: clamp(1.75rem, 4vh, 3.25rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 800ms var(--ease-editorial),
+              visibility 800ms var(--ease-editorial);
+}
+
+.welcome-scroll-cue.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.welcome-cue-text {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--ivory);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+  transition: color var(--duration-fast) var(--ease-editorial);
+}
+
+.welcome-scroll-cue:hover .welcome-cue-text {
+  color: var(--gold);
+}
+
+.welcome-cue-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--gold);
+}
+
+.welcome-cue-pipe {
+  width: 1px;
+  height: 20px;
+  background: linear-gradient(180deg, transparent, var(--gold));
+}
+
+.welcome-cue-arrow {
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--gold);
+  animation: subtleArrowFloat 2.2s ease-in-out infinite alternate;
+}
+
+/* Gentle 4–6px vertical motion (no bouncing, no neon) */
+@keyframes subtleArrowFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(5px); }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .welcome-track-section {
+    height: 160vh;
+    min-height: 650px;
+  }
+
+  .welcome-sticky-stage {
+    height: 100svh;
+    min-height: 520px;
+  }
+
+  .welcome-cue-text {
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-sticky-stage {
+    position: relative;
+    height: 100svh;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .welcome-track-section {
+    height: auto;
+    min-height: auto;
+  }
+
+  .welcome-cue-arrow {
+    animation: none;
+  }
+}

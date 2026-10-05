@@ -1,0 +1,8 @@
+# Dependencies
+node_modules/
+
+# Local build and environment
+.vercel
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,252 @@
+/* ==========================================================================
+   MADHURA MULTICUISINE RESTAURANT — SECTION 05: VISIT MADHURA
+   Restaurant Coordinates, Opening Hours & Classical Interactive Contact Cards
+   ========================================================================== */
+
+.visit-section {
+  position: relative;
+  background-color: var(--paper-light);
+  padding-top: clamp(80px, 8vw, 120px);
+  padding-bottom: clamp(80px, 8vw, 120px);
+  border-top: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: clamp(2rem, 4vw, 4.5rem);
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Left Visual Card (No Gap Top/Bottom, Exact 4:5 Portrait Ratio)
+   -------------------------------------------------------------------------- */
+.visit-visual-card {
+  position: relative;
+  background-color: var(--ivory);
+  padding: 8px 8px 42px 8px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-photo);
+  transition: transform var(--duration-normal) var(--ease-editorial),
+              box-shadow var(--duration-normal) var(--ease-editorial),
+              border-color var(--duration-fast) var(--ease-editorial);
+}
+
+.visit-visual-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-hover);
+}
+
+.visit-img-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: var(--dark-brown);
+}
+
+.visit-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 600ms var(--ease-editorial);
+}
+
+.visit-visual-card:hover .visit-img-frame img {
+  transform: scale(1.025);
+}
+
+.visit-badge-bottom {
+  position: absolute;
+  bottom: 12px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.visit-badge-title {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--dark-brown);
+}
+
+.visit-badge-loc {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* --------------------------------------------------------------------------
+   Right Information Column & 4 Classical Interactive Contact Cards
+   -------------------------------------------------------------------------- */
+.visit-info-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.visit-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--dark-brown);
+  margin-bottom: var(--space-xs);
+}
+
+.visit-heading {
+  font-family: var(--font-display);
+  font-size: var(--text-section-title);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--dark-brown);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-xl);
+}
+
+/* Address & Hours Metadata Details */
+.visit-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.visit-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.visit-detail-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.visit-detail-val {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--dark-brown);
+  line-height: 1.45;
+}
+
+/* 4 Classical Interactive Contact Cards (2x2 Grid) */
+.visit-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.contact-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background-color: var(--paper);
+  border: 1px solid var(--border-subtle);
+  text-decoration: none;
+  border-radius: var(--radius-sharp);
+  transition: all var(--duration-fast) var(--ease-editorial);
+  cursor: pointer;
+}
+
+.contact-card-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.contact-card-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--dark-brown);
+  transition: transform var(--duration-fast) var(--ease-editorial),
+              color var(--duration-fast) var(--ease-editorial);
+}
+
+.contact-card-icon img,
+.contact-card-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.contact-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card-title {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--dark-brown);
+}
+
+.contact-card-sub {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--brown);
+}
+
+.contact-card-arrow {
+  color: var(--gold);
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity var(--duration-fast) var(--ease-editorial),
+              transform var(--duration-fast) var(--ease-editorial);
+}
+
+.contact-card:hover {
+  background-color: var(--ivory);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -4px rgba(40, 19, 15, 0.2);
+}
+
+.contact-card:hover .contact-card-icon {
+  transform: scale(1.1);
+  color: var(--gold);
+}
+
+.contact-card:hover .contact-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Architecture
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .visit-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .visit-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}

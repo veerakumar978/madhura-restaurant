@@ -1,0 +1,601 @@
+/* ==========================================================================
+   MADHURA MULTICUISINE RESTAURANT — FINAL CINEMATIC MEMORY ENDING
+   Hero Serving Action: Server Enters From Left, Walks 4–5 Steps, Serves
+   Hot Biryani, Guest Reaction, Theatrical Thank You & Seamless Quick Loop
+   ========================================================================== */
+
+.memory-ending-section {
+  position: relative;
+  width: 100%;
+  background-color: #28130F;
+  /* Deep clean dark brown — no noisy patterns, no photorealistic backgrounds */
+  background-image: none;
+  min-height: 520px;
+  height: clamp(520px, 64vh, 660px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-top: 1px solid rgba(181, 138, 69, 0.35);
+  box-shadow: inset 0 24px 48px -12px rgba(0, 0, 0, 0.5);
+}
+
+.memory-container {
+  position: relative;
+  width: min(94vw, 1280px);
+  max-width: 1320px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   The Complete Illustrated Restaurant Scene Stage
+   (Already 100% Pre-rendered & Fully Visible on First Frame)
+   -------------------------------------------------------------------------- */
+.memory-scene-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1; /* Pre-rendered & immediately visible */
+  transition: opacity 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.memory-scene-stage.scene-fading-out {
+  opacity: 0;
+}
+
+.memory-restaurant-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 480px;
+  display: block;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Monochrome Ivory Stroke System (#FFF8EA Warm Ivory)
+   -------------------------------------------------------------------------- */
+.memory-restaurant-svg path,
+.memory-restaurant-svg line,
+.memory-restaurant-svg circle,
+.memory-restaurant-svg ellipse {
+  stroke: #FFF8EA;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Background Architecture (Subtle Alcoves & Lights) */
+.layer-architecture .arch-stroke {
+  stroke-width: 1.2;
+  opacity: 0.28;
+}
+
+.layer-architecture .arch-molding {
+  stroke-width: 1;
+  stroke: #B58A45;
+  opacity: 0.32;
+}
+
+.layer-architecture .sconce-stroke {
+  stroke-width: 1.2;
+  opacity: 0.45;
+}
+
+.layer-architecture .light-cord {
+  stroke-width: 1;
+  opacity: 0.38;
+}
+
+.layer-architecture .light-shade {
+  stroke-width: 1.5;
+  opacity: 0.58;
+}
+
+.layer-architecture .light-bulb {
+  fill: #B58A45;
+  stroke: #B58A45;
+  opacity: 0.85;
+}
+
+.layer-architecture .floor-line {
+  stroke-width: 1;
+  opacity: 0.25;
+}
+
+/* Dining Chairs */
+.layer-chairs .chair-stroke {
+  stroke-width: 1.5;
+  opacity: 0.72;
+}
+
+/* Grand Dining Table */
+.layer-table .table-surface {
+  stroke-width: 1.8;
+  opacity: 0.95;
+}
+
+.layer-table .table-rim {
+  stroke-width: 1.2;
+  stroke: #B58A45;
+  opacity: 0.45;
+}
+
+.layer-table .table-fold {
+  stroke-width: 1;
+  opacity: 0.5;
+}
+
+/* Tableware & Dishes */
+.layer-tableware .dish-stroke {
+  stroke-width: 1.6;
+  opacity: 0.9;
+}
+
+.layer-tableware .cutlery-stroke {
+  stroke-width: 1.2;
+  opacity: 0.65;
+}
+
+.layer-tableware .glass-stroke {
+  stroke-width: 1.2;
+  opacity: 0.8;
+}
+
+.layer-tableware .handi-body {
+  stroke-width: 1.6;
+  opacity: 0.88;
+}
+
+.layer-tableware .handi-handle-l,
+.layer-tableware .handi-handle-r {
+  stroke-width: 1.4;
+  opacity: 0.75;
+}
+
+.layer-tableware .food-grain {
+  stroke-width: 1;
+  stroke: #B58A45;
+  opacity: 0.65;
+}
+
+/* Seated Dinner Guests */
+.layer-guests .person-head {
+  stroke-width: 1.6;
+  opacity: 0.92;
+}
+
+.layer-guests .person-hair {
+  stroke-width: 1.4;
+  opacity: 0.85;
+}
+
+.layer-guests .person-body {
+  stroke-width: 1.6;
+  opacity: 0.88;
+}
+
+.layer-guests .person-arm {
+  stroke-width: 1.5;
+  opacity: 0.88;
+}
+
+.layer-guests .hand-gesture {
+  fill: #FFF8EA;
+  stroke-width: 1;
+  opacity: 0.9;
+}
+
+/* --------------------------------------------------------------------------
+   Platter on Table (Appears when Server Places It)
+   -------------------------------------------------------------------------- */
+.table-served-biryani {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 350ms ease, transform 450ms var(--ease-editorial);
+}
+
+.memory-ending-section.biryani-served .table-served-biryani,
+.memory-ending-section.moment-hold .table-served-biryani {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fresh Fragrant Steam Wisps Rising from Table Biryani */
+.biryani-steam-group {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 500ms ease 150ms, transform 600ms ease 150ms;
+}
+
+.memory-ending-section.biryani-served .biryani-steam-group,
+.memory-ending-section.moment-hold .biryani-steam-group {
+  opacity: 0.75;
+  transform: translateY(0);
+}
+
+.biryani-steam-group .steam-line {
+  stroke-width: 1.2;
+  stroke: #FFF8EA;
+  animation: freshSteamDrift 2.4s ease-in-out infinite alternate;
+}
+
+.biryani-steam-group .steam-2 {
+  animation-delay: 0.5s;
+}
+
+.biryani-steam-group .steam-3 {
+  animation-delay: 1.1s;
+}
+
+@keyframes freshSteamDrift {
+  0% { transform: translateY(0) scaleY(1); opacity: 0.4; }
+  100% { transform: translateY(-9px) scaleY(1.1); opacity: 0.85; }
+}
+
+/* --------------------------------------------------------------------------
+   HERO WALKING SERVER ANIMATION
+   4–5 Clearly Visible Steps from Left to Table
+   -------------------------------------------------------------------------- */
+.server-hero-track {
+  transform: translateX(0);
+}
+
+.server-character {
+  transform: translateX(0);
+  transition: transform 300ms ease;
+}
+
+/* 1. Walking Phase: Server walks 255px from left entrance to table edge */
+.memory-ending-section.server-walking .server-character {
+  animation: serverWalkTravel 2.6s cubic-bezier(0.3, 0, 0.2, 1) forwards;
+}
+
+@keyframes serverWalkTravel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(255px); }
+}
+
+/* Arrived / Placing / Served: Server stays firmly beside table */
+.memory-ending-section.server-arrived .server-character,
+.memory-ending-section.server-placing .server-character,
+.memory-ending-section.biryani-served .server-character,
+.memory-ending-section.moment-hold .server-character {
+  transform: translateX(255px);
+}
+
+/* 2. Leg Walk Cycle (4–5 Distinct Steps during the 2.6s walk) */
+.server-leg-left,
+.server-leg-right {
+  transition: transform 250ms ease;
+}
+
+.server-trouser {
+  stroke-width: 1.5;
+  opacity: 0.88;
+}
+
+.server-shoe {
+  stroke-width: 1.4;
+  fill: #28130F;
+  opacity: 0.95;
+}
+
+/* Leg Swing Animations */
+.memory-ending-section.server-walking .server-leg-left {
+  animation: serverStepLeft 0.58s ease-in-out infinite alternate;
+  transform-origin: 128px 285px;
+}
+
+.memory-ending-section.server-walking .server-leg-right {
+  animation: serverStepRight 0.58s ease-in-out infinite alternate;
+  transform-origin: 150px 285px;
+}
+
+@keyframes serverStepLeft {
+  0% { transform: rotate(-20deg); }
+  50% { transform: rotate(3deg) translateY(-3px); }
+  100% { transform: rotate(22deg); }
+}
+
+@keyframes serverStepRight {
+  0% { transform: rotate(22deg); }
+  50% { transform: rotate(3deg) translateY(-3px); }
+  100% { transform: rotate(-20deg); }
+}
+
+/* 3. Server Torso & Head Walk Bob (Subtle Natural Gait Rhythm) */
+.server-upper-body {
+  transition: transform 600ms var(--ease-editorial);
+  transform-origin: 140px 285px;
+}
+
+.memory-ending-section.server-walking .server-upper-body {
+  animation: serverGaitBob 0.29s ease-in-out infinite alternate;
+}
+
+@keyframes serverGaitBob {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3.5px); }
+}
+
+/* Server Styling */
+.server-torso {
+  stroke-width: 1.6;
+  opacity: 0.92;
+}
+
+.server-seam {
+  stroke-width: 1;
+  stroke: #B58A45;
+  opacity: 0.6;
+}
+
+.server-tie {
+  stroke-width: 1.2;
+  stroke: #B58A45;
+  opacity: 0.75;
+}
+
+.server-button {
+  fill: #B58A45;
+  stroke: #B58A45;
+}
+
+/* 4. Server Arms & Biryani Dish Placement Gesture */
+.server-carrying-arms {
+  transition: transform 900ms cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: 144px 172px;
+}
+
+/* Leaning Forward to Place Biryani */
+.memory-ending-section.server-placing .server-upper-body {
+  transform: rotate(5deg) translateY(2px);
+}
+
+.memory-ending-section.server-placing .server-carrying-arms {
+  transform: translate(26px, 22px);
+}
+
+/* Biryani Placed: Server Releases Hands & Stands Naturally */
+.memory-ending-section.biryani-served .server-upper-body,
+.memory-ending-section.moment-hold .server-upper-body {
+  transform: rotate(1.5deg);
+}
+
+.memory-ending-section.biryani-served .server-carrying-arms,
+.memory-ending-section.moment-hold .server-carrying-arms {
+  transform: translate(12px, 12px);
+}
+
+.memory-ending-section.biryani-served .server-carried-biryani,
+.memory-ending-section.moment-hold .server-carried-biryani {
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+/* Steam while Walking */
+.steam-walk {
+  opacity: 0.45;
+  animation: steamWalkBob 1.6s ease-in-out infinite alternate;
+}
+
+.steam-walk-2 {
+  opacity: 0.4;
+  animation: steamWalkBob 1.6s ease-in-out infinite alternate 0.5s;
+}
+
+@keyframes steamWalkBob {
+  0% { transform: translateY(0); opacity: 0.25; }
+  100% { transform: translateY(-6px); opacity: 0.55; }
+}
+
+/* --------------------------------------------------------------------------
+   5. Guest Subtle Reactions Upon Being Served
+   -------------------------------------------------------------------------- */
+.guest-group {
+  transition: transform 800ms var(--ease-editorial);
+  transform-origin: center bottom;
+}
+
+.guest-react-arm {
+  transition: transform 700ms var(--ease-editorial);
+  transform-origin: center top;
+}
+
+/* Guest 1 leans in toward dish in warm appreciation */
+.memory-ending-section.guests-reacting #guest-1,
+.memory-ending-section.moment-hold #guest-1 {
+  transform: translate(-7px, 3px) rotate(-1.8deg);
+}
+
+/* Guest 2 conversational hand lift */
+.memory-ending-section.guests-reacting #guest-2-react-arm,
+.memory-ending-section.moment-hold #guest-2-react-arm {
+  transform: translateY(-6px);
+}
+
+/* --------------------------------------------------------------------------
+   Theatrical Centered Thank-You Card
+   (Appears quickly, holds for 1.8s, then quick restart)
+   -------------------------------------------------------------------------- */
+.memory-thankyou-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 550ms var(--ease-editorial),
+              transform 550ms var(--ease-editorial),
+              visibility 550ms var(--ease-editorial);
+  z-index: 10;
+}
+
+.memory-thankyou-overlay.message-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.memory-thankyou-overlay.message-fading-out {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 450ms ease, transform 450ms ease;
+}
+
+.thankyou-card {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thankyou-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FFF8EA;
+  margin-bottom: var(--space-sm);
+}
+
+.thankyou-subline {
+  display: block;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: rgba(255, 248, 234, 0.92);
+}
+
+.thankyou-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin: var(--space-xs) 0 var(--space-md);
+}
+
+.thankyou-divider-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #B58A45, transparent);
+}
+
+.thankyou-divider-flourish {
+  font-size: 1.15rem;
+  color: #B58A45;
+  line-height: 1;
+}
+
+.thankyou-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.45vw, 1.35rem);
+  font-style: italic;
+  font-weight: 400;
+  color: #E8D3AE;
+  letter-spacing: 0.04em;
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-lg);
+  max-width: 520px;
+}
+
+.thankyou-signature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding-top: var(--space-xs);
+}
+
+.signature-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #B58A45;
+}
+
+.signature-sub {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 248, 234, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Architecture
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .memory-ending-section {
+    height: 480px;
+    min-height: 460px;
+  }
+
+  .memory-restaurant-svg {
+    max-height: 380px;
+  }
+
+  .thankyou-headline {
+    font-size: 1.85rem;
+  }
+
+  .thankyou-subline {
+    font-size: 1.45rem;
+  }
+
+  .thankyou-quote {
+    font-size: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion Accessibility
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .server-hero-track,
+  .server-character,
+  .server-leg-left,
+  .server-leg-right,
+  .server-upper-body,
+  .server-carrying-arms {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .biryani-steam-group .steam-line,
+  .steam-walk {
+    animation: none !important;
+  }
+
+  .memory-scene-stage {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .memory-thankyou-overlay {
+    position: relative;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    padding-top: var(--space-xl);
+  }
+}

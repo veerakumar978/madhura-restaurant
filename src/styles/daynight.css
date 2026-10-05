@@ -1,0 +1,144 @@
+/* ==========================================================================
+   MADHURA MULTICUISINE RESTAURANT — SECTION 06: DAY & NIGHT
+   Architectural Facade Transformation from Morning Light to Night Illumination
+   ========================================================================== */
+
+.daynight-section {
+  position: relative;
+  background-color: var(--madhura-paper);
+  padding-block: clamp(90px, 9vw, 150px);
+  border-top: 1px solid rgba(64, 32, 24, 0.15);
+}
+
+/* Classical Architectural Transition Divider (80–120px Separation) */
+.daynight-visit-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  width: min(94vw, 1560px);
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-block: clamp(40px, 4.5vw, 60px);
+  color: var(--dark-brown);
+}
+
+.daynight-divider-line {
+  flex: 0 1 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.daynight-divider-flourish {
+  font-size: 1.35rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.daynight-toggle-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.daynight-btn {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--madhura-brown);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-sharp);
+  border: 1px solid var(--madhura-brown-border);
+  background-color: var(--madhura-cream);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-editorial);
+}
+
+.daynight-btn:hover {
+  border-color: var(--madhura-gold);
+}
+
+.daynight-btn.active {
+  background-color: var(--madhura-dark);
+  color: var(--madhura-cream);
+  border-color: var(--madhura-dark);
+  box-shadow: 0 4px 14px -2px rgba(40, 19, 15, 0.4);
+}
+
+/* Side-by-side or Interactive Architectural Frame */
+.daynight-comparison-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: stretch;
+}
+
+.daynight-card {
+  position: relative;
+  background-color: var(--madhura-ivory);
+  padding: 8px 8px 36px 8px;
+  border: 1px solid var(--madhura-brown-border);
+  box-shadow: var(--shadow-photo);
+  transition: transform var(--duration-normal) var(--ease-editorial),
+              box-shadow var(--duration-normal) var(--ease-editorial);
+}
+
+.daynight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.daynight-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 12;
+  overflow: hidden;
+  background-color: var(--madhura-dark);
+}
+
+.daynight-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 550ms var(--ease-editorial);
+}
+
+.daynight-card:hover .daynight-card-img-wrap img {
+  transform: scale(1.035);
+}
+
+.daynight-caption {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.daynight-title {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--madhura-dark);
+}
+
+.daynight-time {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: var(--madhura-gold);
+}
+
+@media (max-width: 860px) {
+  .daynight-comparison-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}

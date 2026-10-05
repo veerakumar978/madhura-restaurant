@@ -1,0 +1,130 @@
+/* ==========================================================================
+   MADHURA MULTICUISINE RESTAURANT — SECTION 05: THE SPACE
+   "Come for the Food. Stay for the Moment." — Panoramic Interior Atmosphere
+   ========================================================================== */
+
+.space-section {
+  position: relative;
+  background-color: var(--madhura-dark);
+  color: var(--madhura-ivory);
+  padding-top: var(--space-5xl);
+  padding-bottom: var(--space-5xl);
+  overflow: hidden;
+}
+
+.space-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto var(--space-3xl);
+}
+
+.space-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--madhura-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.space-statement {
+  font-family: var(--font-display);
+  font-size: var(--text-section-title);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--madhura-ivory);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-md);
+}
+
+.space-lead {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+  font-style: italic;
+  line-height: var(--leading-relaxed);
+  color: var(--madhura-cream);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Panoramic Showcase Grid */
+.space-gallery-mosaic {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.space-mosaic-item {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--madhura-dark-deep);
+  border: 1px solid rgba(181, 138, 69, 0.25);
+  box-shadow: 0 14px 34px -8px rgba(0, 0, 0, 0.7);
+}
+
+.space-mosaic-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-editorial),
+              filter 600ms var(--ease-editorial);
+}
+
+.space-mosaic-item:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.06);
+}
+
+.space-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(20, 8, 6, 0.88) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-md);
+}
+
+.space-item-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--madhura-ivory);
+}
+
+.space-item-sub {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--madhura-gold);
+}
+
+.space-mosaic-1 {
+  grid-column: 1 / 7;
+  aspect-ratio: 16 / 10;
+}
+
+.space-mosaic-2 {
+  grid-column: 7 / 13;
+  aspect-ratio: 16 / 10;
+}
+
+.space-mosaic-3 {
+  grid-column: 1 / 13;
+  aspect-ratio: 24 / 9;
+}
+
+@media (max-width: 900px) {
+  .space-mosaic-1,
+  .space-mosaic-2,
+  .space-mosaic-3 {
+    grid-column: 1 / 13;
+    aspect-ratio: 16 / 10;
+  }
+}
